@@ -1,13 +1,12 @@
 package practice;
 
+import java.util.function.Predicate;
 import model.Candidate;
 
-import java.util.function.Predicate;
-
 public class CandidateValidator implements Predicate<Candidate> {
-   private static final int MIN_AGE = 35;
-   private static final int MIN_RESIDANCE_AGE = 10;
-   private static final String NATINOALITY = "Ukrainian";
+    private static final int MIN_AGE = 35;
+    private static final int MIN_RESIDANCE_AGE = 10;
+    private static final String NATINOALITY = "Ukrainian";
 
     @Override
     public boolean test(Candidate candidate) {
@@ -17,6 +16,7 @@ public class CandidateValidator implements Predicate<Candidate> {
         boolean isLivedEnough = getPeriodsInUkr(candidate.getPeriodsInUkr()) >= MIN_RESIDANCE_AGE;
         return isOldEnough && isAllowedToVote && isUkrainian && isLivedEnough;
     }
+
     private int getPeriodsInUkr(String periodsInUkr) {
         String[] years = periodsInUkr.split("-");
 
