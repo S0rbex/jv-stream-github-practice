@@ -22,7 +22,7 @@ public class StreamPractice {
                 .mapToInt(Integer::parseInt)
                 .filter(e -> e % 2 == 0)
                 .min()
-                .orElseThrow(() -> new RuntimeException("Can't get min value from list:"
+                .orElseThrow(() -> new RuntimeException("Can't get min value from list: "
                         + numbers));
     }
 
